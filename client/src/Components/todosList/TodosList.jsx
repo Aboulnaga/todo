@@ -19,7 +19,9 @@ export default function TodosList() {
 
   useEffect(() => {
     if (searchInput) {
-      const filterData = data.filter(todo => todo.title.includes(searchInput));
+      const filterData = data.filter(todo =>
+        todo.title.toLowerCase().includes(searchInput.toLowerCase())
+      );
       // console.log(filterData);
 
       if (filterData) {
