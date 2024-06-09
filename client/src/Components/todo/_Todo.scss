@@ -1,0 +1,150 @@
+.todo {
+  --size: 16px;
+  //   background-color: red;
+  width: 100%;
+  flex: 1 1 320px;
+  border: 1px solid black;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeOut {
+  background-color: rgba(255, 85, 85, 0.2);
+}
+
+.pending {
+  background-color: rgba(251, 221, 167, 0.2);
+}
+
+.completed {
+  background-color: rgba(188, 251, 167, 0.2);
+}
+
+.todo svg:hover {
+  fill: rgb(68, 67, 67);
+}
+.todo svg:active {
+  scale: 0.8;
+}
+
+.todo .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // background-color: bisque;
+  height: 100%;
+  gap: 0.8rem;
+  //   background-color: blue;
+}
+
+.todo .container .todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.todo .container .todo-header h4 {
+  max-width: 30ch;
+  text-wrap: wrap;
+  overflow: hidden;
+  // background-color: aqua;
+}
+.todo .container .todo-header svg {
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  transition: all 0.1s ease;
+  // background-color: red;
+}
+
+.todo .container .todo-body {
+  // background-color: blue;
+  flex-grow: 1;
+}
+.todo .container .todo-footer {
+  display: flex;
+  gap: 0.5rem;
+  //   background-color: red;
+}
+.todo .container .todo-footer .col1,
+.todo .container .todo-footer .col2 {
+  width: 100%;
+}
+.todo .container .todo-footer .col1 .case,
+.todo .container .todo-footer .col2 .case {
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.todo .todo-settings {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  border-top: none;
+  border-right: none;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-150%);
+}
+
+.todo .todo-settings-open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.todo .todo-settings > div {
+  border-bottom: 1px solid rgb(240, 240, 240);
+  padding: 0.2rem;
+}
+.todo .todo-settings > div:hover {
+  background-color: rgb(223, 223, 223);
+}
+
+.todo .todo-settings .del {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo .todo-settings .del .close {
+  --size: 20px;
+  width: var(--size);
+  height: var(--size);
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.todo .todo-settings .del .close:hover {
+  background-color: rgb(76, 76, 76);
+}
+.todo .todo-settings .del .close:active {
+  scale: 0.8;
+}
+
+.todo .todo-settings .del .btn,
+.todo .todo-settings .update .btn {
+  cursor: pointer;
+}
+
+.todo .update-todo-container {
+  position: fixed;
+  background-color: white;
+  inset: 0 0 0 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}

@@ -1,0 +1,49 @@
+import React, { useEffect, useState } from "react";
+import Cat from "../Cat/Cat";
+const api = import.meta.env.VITE_CATS_API;
+
+export default function Categories() {
+  const [cats, setCats] = useState(null);
+  console.log(api);
+  useEffect(() => {
+    const getCats = async () => {
+      try {
+        const data = await fetch(`${api}categories`);
+        const cats = await data.json();
+        console.log(cats.success);
+        console.log(cats.data);
+        setCats(cats.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    getCats();
+  }, []);
+
+  console.log(cats);
+
+  if (!cats) {
+    return (
+      <div>
+        {" "}
+        <p>loading ...!</p>{" "}
+      </div>
+    );
+  }
+
+  const mapCats = cats.map((cat, i) => {
+    return (
+      <div key={i} className="cat">
+        <Cat cat={cat} index={i} />
+      </div>
+    );
+  });
+
+  return (
+    <div className="categories">
+      <p>tst</p>
+      <div className="container max">{mapCats}</div>
+    </div>
+  );
+}

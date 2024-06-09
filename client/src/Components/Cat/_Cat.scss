@@ -1,0 +1,28 @@
+.cat-from {
+  --size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cat-from .del {
+  cursor: pointer;
+  transition: all 0.7s ease;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+.cat-from .del svg {
+  pointer-events: none;
+  width: var(--size);
+  height: var(--size);
+  transition: all 0.2s ease;
+  fill: rgb(94, 94, 94);
+}
+.cat-from .del:hover svg {
+  fill: rgb(176, 21, 21);
+  stroke: rgb(104, 12, 12);
+}
+.cat-from .del:focus svg,
+.cat-from .del:active svg {
+  transform: scale(0.9);
+}

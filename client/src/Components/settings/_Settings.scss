@@ -1,0 +1,35 @@
+.settings {
+  --size: 24px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  //   background-color: red;
+}
+
+.settings svg {
+  width: var(--size);
+  height: var(--size);
+  pointer-events: none;
+}
+
+.svg-btn {
+  cursor: pointer;
+}
+
+.menu {
+  background-color: black;
+  position: absolute;
+  right: 0;
+  transform: translateY(0%);
+  color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+
+.menu-active {
+  visibility: visible;
+  transform: translateY(70%);
+  opacity: 1;
+}

@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid rgba($color: #000000, $alpha: 0.3);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  position: relative;
+}
+
+.max {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@import "./Components/Header/Header";
+@import "./Components/addNewTodo/addNewTodo";
+@import "./Components/settings/Settings";
+@import "./Components/Categories/Categories";
+@import "./Components/Cat/Cat";
+@import "./Components/todosList/TodosList";
+@import "./Components/todo/Todo";
+@import "./Components/updateTodo/UpadteTodo";
