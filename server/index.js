@@ -14,14 +14,21 @@ const app = express();
 
 // @Desc: allow Cors
 
-// console.log(FRE_URL);
-const corsOptions = {
-  origin: FRE_URL, // Replace with your actual frontend origin
-  methods: "GET,PUT,PATCH,POST,DELETE",
-  credentials: true, // Allow cookies for authentication
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
-app.use(cors(corsOptions));
+console.log(FRE_URL);
+// const corsOptions = {
+//   origin: FRE_URL, // Replace with your actual frontend origin
+//   methods: "GET,PUT,PATCH,POST,DELETE",
+//   credentials: true, // Allow cookies for authentication
+//   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+// };
+app.use(
+  cors({
+    origin: FRE_URL, // Replace with your actual frontend origin
+    methods: "GET,PUT,PATCH,POST,DELETE",
+    credentials: true, // Allow cookies for authentication
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  })
+);
 // app.use(cors({ origin: true }));
 
 // @Disc: parse data
